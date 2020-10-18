@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="InternshipPortalApp" lang="en">
+
+<head>
+   
+	
+<title>Internship Portal</title> 
+
+
+<meta charset="utf-8" />
+    
+    <script>
+        document.write('<base href="' + document.location + '" />');
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body  >
+
+
+
+<img src="1.jpeg" width="1400" height="300">
+<center>
+<h6>
+<div first-directive="">
+</div>
+<br>
+<div ng-app="myApp" ng-controller="myCtrl">
+<div ng-repeat="coll in myCollections">
+{{coll}}
+</div>
+</div>
+</center>
+
+
+    <h1>Internship Portal</h1>
+    <div ng-controller="InternshipPortalAddController as inten">
+	<input type="text" ng-model="inten.compname" placeholder="company name" />
+        <input type="text" ng-model="inten.jop" placeholder="jop title" />
+        <input type="text" ng-model="inten.sal" placeholder="salary" />
+		<input type="text" ng-model="inten.duer" placeholder="duration" />
+		<input type="text" ng-model="inten.locat" placeholder="location" />
+        <button  ng-click="inten.addItem();">Add Internship</button>
+    </div>
+    <div  ng-controller="InternshipPortalShowController as showList">
+        <ol><br>
+            <li ng-repeat="item in showList.items">
+			
+                 <B> {{ item.compname }}</B> is providing  <b>{{ item.jop }}</B>  internship with the stipend amount of <B>{{item.sal }}</B>  for  <B> {{ item.duer }}</B>  months at  <B>{{ item.locat }}</B>   
+				 
+                <button ng-click="showList.removeItem($index);">Remove Item</button>
+            </li>
+        </ol>
+		<center>
+		<img src="2.jpg" width="1000" height="300">
+		</center>
+		<h2>Search Internship</h2>
+        <input type="text" ng-model="search" placeholder="compname search" />
+		<button>Search </button>
+        <ol>
+            <li ng-repeat="item in showList.items | filter : {compname: search}">
+             <B> {{ item.compname }}</B> is providing  <b>{{ item.jop }}</B>  internship with the stipend amount of <B>{{item.sal }}</B>  for  <B> {{ item.duer }}</B>  months at  <B>{{ item.locat }}</B>     
+            </li>
+        </ol>
+		<center>
+		<img src="3.jpg" width="1000" height="300">
+        </center>
+		<h3>Sort By</h3>
+        <select name="sorting" ng-model="value">
+            <option value="jop">Jop</option>
+            <option value="compname">company name</option>
+            <option value="exper">exprence</option>
+			<option value="sal">salary</option>
+            <option value="duer">duration</option>
+            <option value="locat">location</option>
+        </select>
+        <button>Sort</button>
+        <ol>
+            <li ng-repeat="item in showList.items | orderBy : value">
+            <B> {{ item.compname }}</B> is providing  <b>{{ item.jop }}</B>  internship with the stipend amount of <B>{{item.sal }}</B>  for  <B> {{ item.duer }}</B>  months at  <B>{{ item.locat }}</B>   
+            </li>
+        </ol>
+        </div>
+
+</body>
+
+</html>

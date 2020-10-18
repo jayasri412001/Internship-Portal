@@ -1,0 +1,46 @@
+button {
+  color: #FFF;
+  background-color: green;
+  
+  font-weight: italic;
+  
+  font-size : px;
+}
+h1 {
+  color: black;
+  
+  font-weight: bold;
+  font-size : 30px;
+}
+h2 {
+  color: black;
+  
+  font-weight: bold;
+  font-size : 30px;
+}
+
+h3 {
+  color: black;
+  
+  font-weight: bold;
+  font-size : 30px;
+}
+input {
+  color: black;
+  
+  font-weight: bold;
+  font-size : 15px;
+}
+h6 {
+  color: black;
+  font-family:AR DELANEY;
+  font-weight: bold;
+  font-size : 33px;
+}
+
+B {
+  
+  
+  font-weight: bold;
+  font-size : 24px;
+}
